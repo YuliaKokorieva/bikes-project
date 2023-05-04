@@ -1,9 +1,2 @@
 .vscode
-
-# Azure Functions
 AzureFunctions/local.settings.json
-
-# Front
-BikeRidesFront/node_modules
-
-
