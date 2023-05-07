@@ -1,4 +1,4 @@
-import TabApp from './components/TabApp'
+import TabApp from './TabApp'
 
 function App() {
   return (

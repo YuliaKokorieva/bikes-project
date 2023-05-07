@@ -6,7 +6,7 @@ import 'ag-grid-community/dist/styles/ag-theme-material.css';
 
 import stationsService from '../../services/stationsservice';
 
-function StationsGrid() {
+function StationsPage() {
   const [stations, setStations] =useState([])
 
   useEffect(() => {
@@ -75,4 +75,4 @@ function StationsGrid() {
   )
 }
 
-export default StationsGrid;
+export default StationsPage;
