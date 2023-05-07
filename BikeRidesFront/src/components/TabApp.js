@@ -4,11 +4,11 @@ import Tabs from'@mui/material/Tabs';
 import Tab from'@mui/material/Tab';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import RidesList from './RidesList';
-import StationsList from './StationsList';
+import RidesPage from './rides/RidesPage';
+import StationsGrid from './stations/StationsGrid';
 
 function TabApp() {
-  const [tabvalue, setTabvalue] = useState();
+  const [tabvalue, setTabvalue] = useState('rides');
   
   useEffect(() => {
     setTabvalue('rides')
@@ -43,8 +43,8 @@ function TabApp() {
         </Tabs>
       </AppBar>
 
-      {tabvalue === 'Rides' && <RidesList/>}
-      {tabvalue === 'stations' && <StationsList/>}
+      {tabvalue === 'Rides' && <RidesPage/>}
+      {tabvalue === 'stations' && <StationsGrid/>}
 
     </div>
   );

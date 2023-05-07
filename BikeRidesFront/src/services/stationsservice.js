@@ -1,10 +1,14 @@
 import axios from 'axios'
+
 const baseStationsUrl = 'https://bikes-project-backend.azurewebsites.net/api/GetStations'
 
 const getAllStations = async () => {
-  const request = axios.get(baseStationsUrl)
-  const response = await request
-  return response.data
+  try {
+    const request = await axios.get(baseStationsUrl)
+    return(request.data)
+  } catch (error) {
+    console.log(error.message)
+  }
 }
 
 const stationsService = {
