@@ -1,10 +1,19 @@
 import axios from 'axios'
 
-const baseStationsUrl = 'https://bikes-project-backend.azurewebsites.net/api/GetStations'
+const baseUrl = 'https://bikes-project-backend.azurewebsites.net'
 
 const getAllStations = async () => {
   try {
-    const request = await axios.get(baseStationsUrl)
+    const request = await axios.get(`${baseUrl}/api/GetStations`)
+    return(request.data)
+  } catch (error) {
+    console.log(error.message)
+  }
+}
+
+const getSingleStation = async (id) => {
+  try {
+    const request = await axios.get(`${baseUrl}/api/GetSingleStation?id=${id}`)
     return(request.data)
   } catch (error) {
     console.log(error.message)
@@ -12,7 +21,8 @@ const getAllStations = async () => {
 }
 
 const stationsService = {
-  getAllStations
+  getAllStations,
+  getSingleStation
 }
 
 export default stationsService

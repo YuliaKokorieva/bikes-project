@@ -5,9 +5,11 @@ import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-material.css';
 
 import stationsService from '../../services/stationsservice';
+import InfoButtonRenderer from './InfoButtonRenderer';
 
 function StationsPage() {
   const [stations, setStations] =useState([])
+  const [gridApi, setGridApi] = useState(null);
 
   useEffect(() => {
     const fetchStations = async () => {
@@ -18,12 +20,15 @@ function StationsPage() {
     fetchStations();
   }, []);
 
-  const [gridApi, setGridApi] = useState(null);
+
   const gridRef = useRef();
 
   const columns = [
     {field: 'Name', sortable: true, filter: true, headerName: 'Name'},
     {field: 'Adress', sortable: false, filter: true, headerName: 'Address'},
+    {field: 'ID',sortable: false, filter: false, headerName: "",
+      cellRenderer: "infoButtonRenderer"
+    }
   ]
 
   function onGridReady(params) {
@@ -39,6 +44,7 @@ function StationsPage() {
     padding: "15px"
   }
   const searchStyle = {width:"500px", padding: "20px", height: "30px"}
+
   return (
     <div>
       <div className="ag-theme-material" style={{marginTop: 20, height: 650,  margin: 'auto'}}>
@@ -68,6 +74,9 @@ function StationsPage() {
           columnDefs={columns}
           pagination={true}
           paginationPageSize={10}
+          frameworkComponents={
+            {infoButtonRenderer: InfoButtonRenderer}
+          }
         />
         
       </div>
