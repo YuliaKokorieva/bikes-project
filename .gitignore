@@ -3,6 +3,7 @@ data/
 
 # Azure Functions
 AzureFunctions/local.settings.json
+AzureFunctions/node_modules
 
 # Front
 BikeRidesFront/node_modules
