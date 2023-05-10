@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import AppBar from '@mui/material/AppBar';
 import Tabs from'@mui/material/Tabs';
 import Tab from'@mui/material/Tab';
@@ -9,12 +9,7 @@ import RidesPage from './components/rides/RidesPage';
 import StationsPage from './components/stations/StationsPage'
 
 function TabApp() {
-  const [tabvalue, setTabvalue] = useState('rides');
-  
-  useEffect(() => {
-    setTabvalue('rides')
-  }, [])
-
+  const [tabvalue, setTabvalue] = useState('stations');
 
   const handleChange=(event, tabvalue) => {
     setTabvalue(tabvalue);
@@ -25,7 +20,7 @@ function TabApp() {
         color: 'white',
         fontWeight: 'bold',
     }
-}
+  }
 
   return (
     <div className="App">

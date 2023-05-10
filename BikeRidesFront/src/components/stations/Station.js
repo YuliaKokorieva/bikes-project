@@ -1,7 +1,26 @@
+import React, {useEffect, useState} from 'react';
+import stationsService from '../../services/stationsservice';
 
-export default function Station() {
+const Station = ({station}) => {
+
+  const [rides, setRides] = useState([])
+
+
+
+  useEffect(() => {
+    const fetchStations = async () => {
+      const rides = await stationsService.getSingleStation(station.ID);
+      setRides(rides)
+      console.log(rides)
+    };
+    fetchStations();
+  }, []);
+
+  
+
   return (
-    <div>single station</div>
+    <div>Station: {station.Name}</div>
   )
-
 }
+
+export default Station

@@ -1,14 +1,24 @@
 import React, { useState, useEffect, useRef } from 'react'
 import {AgGridReact} from 'ag-grid-react';
 import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogTitle from '@mui/material/DialogTitle';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-material.css';
 
 import stationsService from '../../services/stationsservice';
-import InfoButtonRenderer from './InfoButtonRenderer';
+import Station from './Station';
 
 function StationsPage() {
   const [stations, setStations] =useState([])
+  const [selectedStation, setSelectedStation] = useState(null);
+  const [open, setOpen] = useState(false)
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
   const [gridApi, setGridApi] = useState(null);
 
   useEffect(() => {
@@ -16,7 +26,6 @@ function StationsPage() {
       const stations = await stationsService.getAllStations();
       setStations(stations);
     };
-
     fetchStations();
   }, []);
 
@@ -25,11 +34,12 @@ function StationsPage() {
 
   const columns = [
     {field: 'Name', sortable: true, filter: true, headerName: 'Name'},
-    {field: 'Adress', sortable: false, filter: true, headerName: 'Address'},
-    {field: 'ID',sortable: false, filter: false, headerName: "",
-      cellRenderer: "infoButtonRenderer"
-    }
+    {field: 'Adress', sortable: false, filter: true, headerName: 'Address'}
   ]
+  const onRowClicked = (event) => {
+    setSelectedStation(event.data);
+    handleOpen();
+  };
 
   function onGridReady(params) {
     setGridApi(params.api);
@@ -40,8 +50,6 @@ function StationsPage() {
   };
 
   const stackStyle={
-    backgroundColor:"#e8e8f2",
-    padding: "15px"
   }
   const searchStyle = {width:"500px", padding: "20px", height: "30px"}
 
@@ -54,8 +62,6 @@ function StationsPage() {
           justifyContent="left" 
           style={stackStyle}
         >
-
-
           <div >
             <input
               style={searchStyle}
@@ -64,8 +70,8 @@ function StationsPage() {
               onChange={handleQuickFilter}
             />
           </div>
-          
         </Stack>
+
         <AgGridReact
           ref={gridRef}
           onGridReady={onGridReady}
@@ -74,11 +80,14 @@ function StationsPage() {
           columnDefs={columns}
           pagination={true}
           paginationPageSize={10}
-          frameworkComponents={
-            {infoButtonRenderer: InfoButtonRenderer}
-          }
+          onRowClicked={onRowClicked}
         />
-        
+        <Dialog
+          open = {open}
+          onClose={handleClose}
+        >
+          <Station station={selectedStation}/>
+        </Dialog>
       </div>
     </div>
   )
