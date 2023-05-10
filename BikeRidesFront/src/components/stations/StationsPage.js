@@ -1,10 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect} from 'react'
 import {AgGridReact} from 'ag-grid-react';
 import Stack from '@mui/material/Stack';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
 import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import 'ag-grid-community/dist/styles/ag-grid.css';
@@ -29,12 +26,9 @@ function StationsPage() {
     fetchStations();
   }, []);
 
-
-  const gridRef = useRef();
-
   const columns = [
     {field: 'Name', sortable: true, filter: true, headerName: 'Name'},
-    {field: 'Adress', sortable: false, filter: true, headerName: 'Address'}
+    {field: 'Osoite', sortable: false, filter: true, headerName: 'Address'}
   ]
   const onRowClicked = (event) => {
     setSelectedStation(event.data);
@@ -50,6 +44,8 @@ function StationsPage() {
   };
 
   const stackStyle={
+    backgroundColor:"#e8e8f2",
+    padding: "15px"
   }
   const searchStyle = {width:"500px", padding: "20px", height: "30px"}
 
@@ -73,7 +69,6 @@ function StationsPage() {
         </Stack>
 
         <AgGridReact
-          ref={gridRef}
           onGridReady={onGridReady}
           rowSelection="single"
           rowData={stations}
@@ -86,7 +81,11 @@ function StationsPage() {
           open = {open}
           onClose={handleClose}
         >
-          <Station station={selectedStation}/>
+          <DialogTitle>{selectedStation? selectedStation.Name : null}: station info</DialogTitle>
+          <DialogContent>
+            <Station station={selectedStation}/>
+          </DialogContent>
+
         </Dialog>
       </div>
     </div>

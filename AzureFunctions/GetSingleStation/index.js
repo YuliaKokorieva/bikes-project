@@ -24,15 +24,8 @@ module.exports = async function (context, req) {
         ON rides.Departure_station_id = dep_stations.id
         WHERE dep_stations.id = ${req.query.id};
     `);
-
-    if (result.recordset.length > 0) {
-      context.res = {
-        body: result.recordset
-      };
-    } else {
-      context.res={
-        body: `no departures from this station`
-      }
+    context.res = {
+      body: result.recordset
     }
   } catch (err) {
     context.res = {
