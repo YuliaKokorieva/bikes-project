@@ -46,7 +46,7 @@ const Station = ({id}) => {
 
           <Typography variant="button">Journeys ended at the station</Typography><br/>
           <ul>
-            <li><Typography variant="body1">Number: {station.ended? station.ended: "0"}</Typography></li>
+            <li><Typography variant="body1">Number: {station.rides_ended? station.rides_ended: "0"}</Typography></li>
             <li><Typography variant="body1">Average distance: {station.avg_distance_ended? station.avg_distance_ended : "0"} m</Typography><br/></li>
           </ul>
         </span>
