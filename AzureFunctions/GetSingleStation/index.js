@@ -26,7 +26,9 @@ module.exports = async function (context, req) {
       s.Osoite,
       s.Kaupunki,
       COUNT(DISTINCT r1.id) AS rides_originated, 
-      COUNT(DISTINCT r2.id) AS rides_ended 
+      COUNT(DISTINCT r2.id) AS rides_ended,
+      AVG(CASE WHEN r1.Departure_station_id = s.id THEN r1.Covered_distance_m END) AS avg_distance_originated,
+      AVG(CASE WHEN r2.Return_station_id = s.id THEN r2.Covered_distance_m END) AS avg_distance_ended
     FROM 
       Bike_stations s 
       LEFT JOIN Rides r1 ON s.id = r1.Departure_station_id 
@@ -35,6 +37,7 @@ module.exports = async function (context, req) {
       s.id = ${req.query.id}
     GROUP BY 
       s.id, s.Name, s.x, s.y, s.Osoite, s.Kaupunki;
+
     `);
     if (result.recordset.length > 0) {
       context.res = {

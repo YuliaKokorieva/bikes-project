@@ -33,13 +33,22 @@ const Station = ({id}) => {
 
   return (
     <span style={dialogStyle}>
-      <Typography variant="body1">
+      
         {station?
         (
         <span>
-          Address: {station.Osoite} {station.Kaupunki? station.Kaupunki: null}<br/>
-          Journeys originated from the station: {station.rides_originated}<br/>
-          Journeys ended at the station: {station.rides_ended}<br/>
+          <Typography variant="button">Address:</Typography> <Typography variant="body1">{station.Osoite} {station.Kaupunki? station.Kaupunki: null}</Typography><br/>
+          <Typography variant="button">Journeys originated from the station</Typography><br/>
+          <ul>
+            <li><Typography variant="body1">Number: {station.rides_originated? station.rides_originated: "0"}</Typography></li>
+            <li><Typography variant="body1">Average distance: {station.avg_distance_originated? station.avg_distance_originated : "0"} m</Typography></li>          
+          </ul>
+
+          <Typography variant="button">Journeys ended at the station</Typography><br/>
+          <ul>
+            <li><Typography variant="body1">Number: {station.ended? station.ended: "0"}</Typography></li>
+            <li><Typography variant="body1">Average distance: {station.avg_distance_ended? station.avg_distance_ended : "0"} m</Typography><br/></li>
+          </ul>
         </span>
         ): <span>Loading...</span>
         }
@@ -59,7 +68,7 @@ const Station = ({id}) => {
           )}
 
         </span>
-      </Typography>
+      {/* </Typography> */}
     </span>
   )
 }
