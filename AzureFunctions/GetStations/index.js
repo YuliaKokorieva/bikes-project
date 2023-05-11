@@ -18,7 +18,7 @@ module.exports = async function (context, req) {
     await sql.connect(config);
 
     const result = await sql.query(`
-      SELECT ID, Name, Osoite, Kaupunki, x, y
+      SELECT ID, Name, Osoite, Kaupunki
       FROM [dbo].[Bike_stations]
     `);
 

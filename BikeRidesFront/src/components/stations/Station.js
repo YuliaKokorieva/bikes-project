@@ -4,23 +4,23 @@ import Typography from '@mui/material/Typography';
 
 import stationsService from '../../services/stationsservice';
 
-const Station = ({station}) => {
+const Station = ({id}) => {
 
-  const [rides, setRides] = useState([])
+  const [station, setStation] = useState()
+  const [center, setCenter] = useState()
 
   useEffect(() => {
-    const fetchStations = async () => {
-      const rides = await stationsService.getSingleStation(station.ID);
-      setRides(rides)
+    const fetchStation = async () => {
+      const stationInfo = await stationsService.getSingleStation(id);
+      setStation(stationInfo)
+      setCenter({lat: stationInfo.station_lat, lng: stationInfo.station_lng})
     };
-    fetchStations();
+    fetchStation();
   }, []);
 
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_API_KEY,
   });
-  const center = useMemo(()=> ({lat: station.y, lng: station.x}), [])
-
 
   const mapStyle = {
     height: 300,
@@ -32,10 +32,18 @@ const Station = ({station}) => {
   }
 
   return (
-    <div style={dialogStyle}>
+    <span style={dialogStyle}>
       <Typography variant="body1">
-        <span>Address: {station.Osoite} {station.Kaupunki? station.Kaupunki: null}<br/>
-        Rides starting from the station: {rides.length}</span>
+        {station?
+        (
+        <span>
+          Address: {station.Osoite} {station.Kaupunki? station.Kaupunki: null}<br/>
+          Journeys originated from the station: {station.rides_originated}<br/>
+          Journeys ended at the station: {station.rides_ended}<br/>
+        </span>
+        ): <span>Loading...</span>
+        }
+        
         <span>
           {!isLoaded ? (
             <span>Loading...</span>
@@ -45,14 +53,14 @@ const Station = ({station}) => {
               center={center}
               zoom={15}
             > 
-               <Marker position={center} />
+              <Marker position={center} />
             </GoogleMap>
 
           )}
 
         </span>
       </Typography>
-    </div>
+    </span>
   )
 }
 

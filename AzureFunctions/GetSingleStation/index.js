@@ -18,15 +18,35 @@ module.exports = async function (context, req) {
     await sql.connect(config);
 
     const result = await sql.query(`
-        SELECT rides.ID as "Ride ID", rides.Departure_station_id, dep_stations.Name as "Departure_station", rides.Return_station_id
-        FROM [dbo].[Rides] as rides 
-        JOIN [dbo].[Bike_stations] as dep_stations 
-        ON rides.Departure_station_id = dep_stations.id
-        WHERE dep_stations.id = ${req.query.id};
+    SELECT 
+      s.id AS station_id, 
+      s.name AS station_name, 
+      s.x AS station_lng,
+      s.y AS station_lat,
+      s.Osoite,
+      s.Kaupunki,
+      COUNT(DISTINCT r1.id) AS rides_originated, 
+      COUNT(DISTINCT r2.id) AS rides_ended 
+    FROM 
+      Bike_stations s 
+      LEFT JOIN Rides r1 ON s.id = r1.Departure_station_id 
+      LEFT JOIN Rides r2 ON s.id = r2.Return_station_id 
+    WHERE 
+      s.id = ${req.query.id}
+    GROUP BY 
+      s.id, s.Name, s.x, s.y, s.Osoite, s.Kaupunki;
     `);
-    context.res = {
-      body: result.recordset
+    if (result.recordset.length > 0) {
+      context.res = {
+        body: result.recordset[0]
+      };
+    } else {
+      context.res = {
+        status: 404,
+        body: "No data found"
+      };
     }
+
   } catch (err) {
     context.res = {
       status: 500,

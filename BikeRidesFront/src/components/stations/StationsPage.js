@@ -81,10 +81,17 @@ function StationsPage() {
           open = {open}
           onClose={handleClose}
         >
-          <DialogTitle>{selectedStation? selectedStation.Name : null}: station info</DialogTitle>
-          <DialogContent>
-            <Station station={selectedStation}/>
-          </DialogContent>
+          {
+            selectedStation ?
+              (
+              <div>
+                <DialogTitle>{selectedStation.Name}: station info</DialogTitle>
+                <DialogContent>
+                  <Station id={selectedStation.ID}/>
+                </DialogContent>
+              </div>)
+              : null
+          }
 
         </Dialog>
       </div>
