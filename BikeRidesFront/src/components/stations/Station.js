@@ -26,13 +26,8 @@ const Station = ({id}) => {
     height: 300,
     width: 300
   }
-  const dialogStyle = {
-    height: '100%',
-    width: '100%'
-  }
-
   return (
-    <span style={dialogStyle}>
+    <span >
       
         {station?
         (
@@ -41,13 +36,13 @@ const Station = ({id}) => {
           <Typography variant="button">Journeys originated from the station</Typography><br/>
           <ul>
             <li><Typography variant="body1">Number: {station.rides_originated? station.rides_originated: "0"}</Typography></li>
-            <li><Typography variant="body1">Average distance: {station.avg_distance_originated? station.avg_distance_originated : "0"} m</Typography></li>          
+            <li><Typography variant="body1">Average distance: {station.avg_distance_originated? station.avg_distance_originated.toFixed(1) : "0"} m</Typography></li>          
           </ul>
 
           <Typography variant="button">Journeys ended at the station</Typography><br/>
           <ul>
             <li><Typography variant="body1">Number: {station.rides_ended? station.rides_ended: "0"}</Typography></li>
-            <li><Typography variant="body1">Average distance: {station.avg_distance_ended? station.avg_distance_ended : "0"} m</Typography><br/></li>
+            <li><Typography variant="body1">Average distance: {station.avg_distance_ended? station.avg_distance_ended.toFixed(1) : "0"} m</Typography><br/></li>
           </ul>
         </span>
         ): <span>Loading...</span>

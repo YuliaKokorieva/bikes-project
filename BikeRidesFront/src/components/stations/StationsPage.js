@@ -80,6 +80,12 @@ function StationsPage() {
         <Dialog
           open = {open}
           onClose={handleClose}
+          PaperProps={{
+            style: {
+              minWidth: 400,
+              minHeight: 300
+            }
+          }} 
         >
           {
             selectedStation ?
