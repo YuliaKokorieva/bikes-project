@@ -1,9 +1,6 @@
 import React, { useState, useEffect} from 'react'
 import {AgGridReact} from 'ag-grid-react';
-import Stack from '@mui/material/Stack';
-import Dialog from '@mui/material/Dialog';
-import DialogContent from '@mui/material/DialogContent';
-import DialogTitle from '@mui/material/DialogTitle';
+import {Dialog, DialogContent, DialogTitle, Stack} from '@mui/material';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-material.css';
 
