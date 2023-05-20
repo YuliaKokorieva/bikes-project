@@ -10,6 +10,10 @@
     "ag-grid-community": "^26.1.0",
     "ag-grid-react": "^26.1.0",
     "axios": "^0.27.2",
+    "dotenv": "^16.0.3",
+    "eslint": "^7.32.0",
+    "npm": "^8.1.0",
+    "prop-types": "^15.8.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3"
@@ -18,7 +22,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint ."
   },
   "browserslist": {
     "production": [
@@ -33,6 +38,7 @@
     ]
   },
   "devDependencies": {
-    "react-error-overlay": "^6.0.9"
+    "react-error-overlay": "^6.0.9",
+    "sonarqube-scanner": "^3.0.1"
   }
 }

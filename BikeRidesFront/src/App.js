@@ -1,4 +1,4 @@
-
+import React from 'react'
 import TabApp from './TabApp'
 
 function App() {
@@ -6,7 +6,7 @@ function App() {
     <div>
       <TabApp />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

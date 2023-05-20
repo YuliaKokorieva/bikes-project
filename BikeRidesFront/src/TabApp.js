@@ -1,25 +1,25 @@
-import React, {useState} from 'react';
-import AppBar from '@mui/material/AppBar';
-import Tabs from'@mui/material/Tabs';
-import Tab from'@mui/material/Tab';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
+import React, { useState } from 'react'
+import AppBar from '@mui/material/AppBar'
+import Tabs from '@mui/material/Tabs'
+import Tab from '@mui/material/Tab'
+import Toolbar from '@mui/material/Toolbar'
+import Typography from '@mui/material/Typography'
 
-import RidesPage from './components/rides/RidesPage';
+import RidesPage from './components/rides/RidesPage'
 import StationsPage from './components/stations/StationsPage'
 
 function TabApp() {
-  const [tabvalue, setTabvalue] = useState('stations');
+  const [tabvalue, setTabvalue] = useState('stations')
 
-  const handleChange=(event, tabvalue) => {
-    setTabvalue(tabvalue);
+  const handleChange = (event, newtabvalue) => {
+    setTabvalue(newtabvalue)
   }
   const styles = {
     tab: {
-        padding: '2px 34px',
-        color: 'white',
-        fontWeight: 'bold',
-    }
+      padding: '2px 34px',
+      color: 'white',
+      fontWeight: 'bold',
+    },
   }
 
   return (
@@ -33,17 +33,17 @@ function TabApp() {
       </AppBar>
 
       <AppBar position="static">
-        <Tabs value={tabvalue} onChange={handleChange} TabIndicatorProps={{style: {background:'white'}}}>
-          <Tab value="rides" label="Rides" style={styles.tab}/>
-          <Tab value="stations" label="Stations" style={styles.tab}/>
+        <Tabs value={tabvalue} onChange={handleChange} TabIndicatorProps={{ style: { background: 'white' } }}>
+          <Tab value="rides" label="Rides" style={styles.tab} />
+          <Tab value="stations" label="Stations" style={styles.tab} />
         </Tabs>
       </AppBar>
 
-      {tabvalue === 'rides' && <RidesPage/>}
-      {tabvalue === 'stations' && <StationsPage/>}
+      {tabvalue === 'rides' && <RidesPage />}
+      {tabvalue === 'stations' && <StationsPage />}
 
     </div>
-  );
+  )
 }
 
-export default TabApp;
+export default TabApp

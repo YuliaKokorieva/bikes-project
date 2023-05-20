@@ -1,0 +1,4 @@
+node_modules/
+.scannerwork
+build
+.eslintrc.js
