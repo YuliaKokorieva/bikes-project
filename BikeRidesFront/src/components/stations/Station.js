@@ -94,9 +94,7 @@ function Station({ id }) {
           </GoogleMap>
 
         )}
-
       </span>
-      {/* </Typography> */}
     </span>
   )
 }
