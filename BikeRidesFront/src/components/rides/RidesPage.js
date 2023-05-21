@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import 'ag-grid-community/dist/styles/ag-grid.css'
-import 'ag-grid-community/dist/styles/ag-theme-material.css'
 
 import ridesService from '../../services/ridesservice'
 import Grid from '../Grid'

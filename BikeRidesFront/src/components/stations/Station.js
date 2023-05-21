@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import Typography from '@mui/material/Typography'
 
 import stationsService from '../../services/stationsservice'
+import { mapStyle } from '../../styles/styles'
 
 function Station({ id }) {
   const [station, setStation] = useState()
@@ -22,10 +23,7 @@ function Station({ id }) {
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_API_KEY,
   })
 
-  const mapStyle = {
-    height: 300,
-    width: 300,
-  }
+
   return (
     <span>
 

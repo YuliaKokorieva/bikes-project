@@ -6,6 +6,7 @@ import 'ag-grid-community/dist/styles/ag-grid.css'
 import 'ag-grid-community/dist/styles/ag-theme-material.css'
 
 import Station from './stations/Station'
+import { gridStyle } from '../styles/styles'
 
 function Grid({ rows, columns, clickableRows }) {
   const [gridApi, setGridApi] = useState(null)
@@ -27,24 +28,18 @@ function Grid({ rows, columns, clickableRows }) {
     gridApi.setQuickFilter(event.target.value)
   }
 
-  const stackStyle = {
-    backgroundColor: '#e8e8f2',
-    padding: '15px',
-  }
-  const searchStyle = { width: '500px', padding: '20px', height: '30px' }
-
   return (
     <div>
-      <div className="ag-theme-material" style={{ marginTop: 20, height: 650, margin: 'auto' }}>
+      <div className="ag-theme-material" style={gridStyle.div}>
         <Stack
           direction="row"
           spacing={3}
           justifyContent="left"
-          style={stackStyle}
+          style={gridStyle.stack}
         >
           <div>
             <input
-              style={searchStyle}
+              style={gridStyle.search}
               type="search"
               placeholder="Search"
               onChange={handleQuickFilter}
@@ -68,10 +63,7 @@ function Grid({ rows, columns, clickableRows }) {
                 open={open}
                 onClose={handleClose}
                 PaperProps={{
-                  style: {
-                    minWidth: 400,
-                    minHeight: 300,
-                  },
+                  style: gridStyle.dialog,
                 }}
               >
                 {

@@ -7,19 +7,13 @@ import Typography from '@mui/material/Typography'
 
 import RidesPage from './components/rides/RidesPage'
 import StationsPage from './components/stations/StationsPage'
+import { tabAppStyle } from './styles/styles'
 
 function TabApp() {
   const [tabvalue, setTabvalue] = useState('stations')
 
   const handleChange = (event, newtabvalue) => {
     setTabvalue(newtabvalue)
-  }
-  const styles = {
-    tab: {
-      padding: '2px 34px',
-      color: 'white',
-      fontWeight: 'bold',
-    },
   }
 
   return (
@@ -33,9 +27,9 @@ function TabApp() {
       </AppBar>
 
       <AppBar position="static">
-        <Tabs value={tabvalue} onChange={handleChange} TabIndicatorProps={{ style: { background: 'white' } }}>
-          <Tab value="rides" label="Rides" style={styles.tab} />
-          <Tab value="stations" label="Stations" style={styles.tab} />
+        <Tabs value={tabvalue} onChange={handleChange} TabIndicatorProps={{ style: tabAppStyle.tabIndicator }}>
+          <Tab value="rides" label="Rides" style={tabAppStyle.tab} />
+          <Tab value="stations" label="Stations" style={tabAppStyle.tab} />
         </Tabs>
       </AppBar>
 
