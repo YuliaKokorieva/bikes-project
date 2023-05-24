@@ -1,7 +1,6 @@
 import axios from 'axios'
 
-const baseUrl = 'https://bikes-project-backend.azurewebsites.net'
-// const localBaseUrl = 'http://localhost:7071'
+const baseUrl = process.env.REACT_APP_FUNC_SOURCE === 'local' ? process.env.REACT_APP_LOCAL_BASE_URL : process.env.REACT_APP_BASE_URL
 
 const getAllRides = async () => {
   try {

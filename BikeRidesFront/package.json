@@ -10,6 +10,7 @@
     "ag-grid-community": "^26.1.0",
     "ag-grid-react": "^26.1.0",
     "axios": "^0.27.2",
+    "cross-env": "^7.0.3",
     "dotenv": "^16.0.3",
     "eslint": "^7.32.0",
     "npm": "^8.1.0",
@@ -19,7 +20,8 @@
     "react-scripts": "4.0.3"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start local": "cross-env REACT_APP_FUNC_SOURCE=local react-scripts start",
+    "start": "cross-env REACT_APP_FUNC_SOURCE=cloud react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
