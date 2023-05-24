@@ -55,6 +55,14 @@ function Station({ id }) {
                   m
                 </Typography>
               </li>
+              <li>
+                <Typography variant="body1">
+                  Top return stations:
+                  {station.top_return_stations ? station.top_return_stations : 'none'}
+                  {' '}
+                </Typography>
+                <br />
+              </li>
             </ul>
 
             <Typography variant="button">Journeys ended at the station</Typography>
@@ -71,7 +79,13 @@ function Station({ id }) {
                   Average distance:
                   {station.avg_distance_ended ? station.avg_distance_ended.toFixed(1) : '0'}
                   {' '}
-                  m
+                </Typography>
+              </li>
+              <li>
+                <Typography variant="body1">
+                  Top departure stations:
+                  {station.top_departure_stations ? station.top_departure_stations : 'none'}
+                  {' '}
                 </Typography>
                 <br />
               </li>
