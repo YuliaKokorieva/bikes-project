@@ -10,6 +10,7 @@ Available features:
 1. clone the repo
 2. open BikeRidesFront folder
 3. run `npm install`
+4. to access single station's location, you need to provide Google API key. Go to project root, rename file `.env.example` to `.env` and add it to the variable definition.
 
 ## Available Scripts
 
@@ -52,7 +53,7 @@ In this app, the possibility to run static code analysis is implemented. To perf
 2. open the terminal to the project root folder and run `docker compose up`
 3. when you see the text "SonarQube is operational" in the logs, go to `http://localhost:9000`. Default user name and password are `admin`, `admin`; as required, change the password in order to login. 
 4. having logged in, go to ` Administration -> Security -> Users ` and generate new token
-5. go to project root, rename file `.env.example` to `.env` and copy the token to the variable definition
+5. copy the token to the variable definition in the `.env` file
 6. now all set, the first analysis can be performed by opening the terminal to the project root folder and running command `node sonarqube-scanner.js` 
 7. when the text "EXECUTION SUCCESS" appears in the logs, you can go to `http://localhost:9000/projects`  and check the results.  
 
