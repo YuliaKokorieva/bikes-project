@@ -3,7 +3,6 @@ import axios from 'axios'
 const baseUrl = process.env.REACT_APP_FUNC_SOURCE === 'local' ? process.env.REACT_APP_LOCAL_BASE_URL : process.env.REACT_APP_BASE_URL
 
 const getAllStations = async () => {
-  console.log(process.env.REACT_APP_FUNC_SOURCE)
   try {
     const res = await axios.get(`${baseUrl}/api/GetStations`)
     return (res.data)

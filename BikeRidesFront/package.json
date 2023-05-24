@@ -20,8 +20,9 @@
     "react-scripts": "4.0.3"
   },
   "scripts": {
-    "start local": "cross-env REACT_APP_FUNC_SOURCE=local react-scripts start",
+
     "start": "cross-env REACT_APP_FUNC_SOURCE=cloud react-scripts start",
+    "local": "cross-env REACT_APP_FUNC_SOURCE=local react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

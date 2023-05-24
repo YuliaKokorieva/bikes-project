@@ -20,7 +20,7 @@ In the project directory, you can run:
 Runs the app with the Azure Functions backend running from the cloud. Might take a minute or two for the backend to launch upon request.
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-### `npm start local`
+### `npm run local`
 
 Runs the app with the Azure Functions backend running locally (requires to previously turn on the backend, instructions in [AzureFunctions](https://github.com/YuliaKokorieva/bikes-project/tree/master/AzureFunctions) ).
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
