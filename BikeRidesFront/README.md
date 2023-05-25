@@ -2,9 +2,14 @@
 
 This is frontend for the Bike Rides application. 
 Available features:
-* list of all rides for the period ...
-* list of all bike stations
-* info on every station
+1. list of all rides for the period 05/2021 = 07/2021 incl.
+2. list of all bike stations
+3. info on every station:
+ - name 
+ - address
+ - journeys originated from the station: number, avg distance, list of top 5 return stations 
+ - journeys ended at the station: number, avg distance, list of top 5 departure stations 
+ - location on map (using Google Maps API)
 
 ## Installation
 1. clone the repo

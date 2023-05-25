@@ -1,5 +1,5 @@
 # Bike Rides project
-**Data** concatenated and validated with [Python script](https://github.com/YuliaKokorieva/bikes-project/blob/master/Data/data_validation.py). Only 100 rows taken into work due to limitations of cheapest edition of Azure SQL DB.  
+**Data** concatenated and validated with [Python script](https://github.com/YuliaKokorieva/bikes-project/blob/master/Data/data_validation.py). For importing and manipulating data in the Azure SQL Database, Azure Data Studio tool has been used.
 
 **Backend** hosted in Azure:
 

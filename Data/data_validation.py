@@ -12,6 +12,6 @@ combined_csv = combined_csv.dropna()
 combined_csv = combined_csv[combined_csv['Duration (sec.)'].astype(int) >= duration_threshold] 
 combined_csv = combined_csv[combined_csv['Covered distance (m)'].astype(int) >= distance_threshold]  
 
-combined_csv = combined_csv.head(100)
-
 combined_csv.to_csv(os.path.join(folder_path, 'combined.csv'), index=False)
+
+
