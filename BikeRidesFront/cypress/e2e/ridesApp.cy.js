@@ -13,7 +13,7 @@ describe('Bike Rides App', () => {
     cy.contains('Laajalahden aukio')
   })
 
-  it('In Stations Tab, info on station can be rendered', () => {
+  it('In Stations Tab, info on single station can be rendered', () => {
     cy.get('#stationsTab').click()
     cy.contains('Kaivopuisto').click()
     cy.contains('Meritori 1')

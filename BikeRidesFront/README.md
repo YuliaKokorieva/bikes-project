@@ -49,6 +49,14 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
+## Tests 
+In this project, **Cypress** e2e tests are implemented. 
+**Prerequisites**: you need to have Cypress installed.
+**To run tests:**
+1. launch Backend (either local or from the cloud) 
+2. launch Frontend
+3. open terminal to the Frontend project root folder and run `npm run cypress:open`
+4. in the newly opened window, choose e2e tests, then preferred browser and then the ridesApp.cy.js spec file.
 
 ## Setting up SonarQube and running static code analysis
 SonarQube is an open source platform to perform automatic reviews with static analysis of code to detect bugs, code smells and security vulnerabilities on 25+ programming languages. 
@@ -63,6 +71,3 @@ In this app, the possibility to run static code analysis is implemented. To perf
 7. when the text "EXECUTION SUCCESS" appears in the logs, you can go to `http://localhost:9000/projects`  and check the results.  
 
 (for sake of simplicity, the default SonarQube container with H2 is used. However, if you want to persistently save analysis reports, it is recommended to use the SonarQube container with a Postgresql database)
-
-## Tests 
-
