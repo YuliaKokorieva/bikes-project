@@ -16,7 +16,9 @@ bike_stations = pd.read_csv('data-csv/raw-data/Helsingin_ja_Espoon_kaupunkipyör
 
 valid_ids = bike_stations['ID']
 
-combined_csv = combined_csv[combined_csv['Departure_station_id'].isin(valid_ids)]
-combined_csv = combined_csv[combined_csv['Return_station_id'].isin(valid_ids)]
+combined_csv = combined_csv[combined_csv['Departure station id'].isin(valid_ids)]
+combined_csv = combined_csv[combined_csv['Return station id'].isin(valid_ids)]
+
+# combined_csv = combined_csv.head(10000)
 
 combined_csv.to_csv(os.path.join(folder_path, 'combined.csv'), index=False)

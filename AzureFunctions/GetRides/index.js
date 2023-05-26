@@ -18,12 +18,8 @@ module.exports = async function (context, req) {
     await sql.connect(config);
 
     const result = await sql.query(`
-      SELECT rides.ID, rides.[Departure], rides.[Return], rides.[Covered_distance_m], rides.[Duration_sec], dep_stations.[Nimi] as Departure_station, ret_stations.[Nimi] as Return_station
-      FROM [dbo].[Rides] as rides 
-      JOIN [dbo].[Bike_stations] as dep_stations 
-      ON [rides].[Departure_station_id] = [dep_stations].[ID] 
-      JOIN [dbo].[Bike_stations] as ret_stations 
-      ON [rides].[Return_station_id] = [ret_stations].[ID]
+      SELECT ID, [Departure_station_name] as Departure_station, [Return_station_name] as Return_station, [Duration_sec], [Covered_distance_m]
+      FROM [dbo].[Rides_10000];
     `);
 
     context.res = {
