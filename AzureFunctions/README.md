@@ -16,7 +16,12 @@ It can be run either locally or from the Azure cloud (Function App).
 4. to run Functions locally, you need credentials for DB connection, that are sored in `local.settings.json` file. It can be sent via email and should be placed in the root directory.
 
 ### Starting backend server locally
-1. in project root folder terminal, run `func start` before starting the Frontend
+1. in project root folder terminal, run `func start` before starting the Frontend.
+
+### Running tests
+As an example, for GetRides function the unit tests utilizing Jest library are implemented. 
+To run the test, open the terminal to any folder within AzureFunctions project and run `npm run test` command.
+
 
 ## 2. Running from the cloud
 You do not need to do anything to start the server from the cloud. 

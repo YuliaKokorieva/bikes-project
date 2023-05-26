@@ -33,7 +33,7 @@ module.exports = async function (context, req) {
       SELECT STRING_AGG(b1.name, ', ')
       FROM (
         SELECT TOP 5 b.name
-        FROM Rides_10000 r1
+        FROM Rides r1
         JOIN Bike_stations b ON r1.Return_station_id = b.id
         WHERE r1.Departure_station_id = s.id
         GROUP BY b.name
@@ -44,7 +44,7 @@ module.exports = async function (context, req) {
       SELECT STRING_AGG(b2.name, ', ')
       FROM (
         SELECT TOP 5 b.name
-        FROM Rides_10000 r2
+        FROM Rides r2
         JOIN Bike_stations b ON r2.Departure_station_id = b.id
         WHERE r2.Return_station_id = s.id
         GROUP BY b.name
@@ -53,8 +53,8 @@ module.exports = async function (context, req) {
     ) AS top_departure_stations
   FROM 
     Bike_stations s 
-    LEFT JOIN Rides_10000 r1 ON s.id = r1.Departure_station_id 
-    LEFT JOIN Rides_10000 r2 ON s.id = r2.Return_station_id 
+    LEFT JOIN Rides r1 ON s.id = r1.Departure_station_id 
+    LEFT JOIN Rides r2 ON s.id = r2.Return_station_id 
   WHERE 
   s.id = ${req.query.id}
   GROUP BY 

@@ -4,9 +4,13 @@
   "description": "",
   "scripts": {
     "start": "func start",
-    "test": "echo \"No tests yet...\""
+    "test": "jest"
   },
   "dependencies": {
     "mssql": "^9.1.1"
+  },
+  "devDependencies": {
+    "jest": "^29.5.0",
+    "jest-mock-extended": "^3.0.4"
   }
 }
