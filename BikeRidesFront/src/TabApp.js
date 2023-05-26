@@ -21,15 +21,15 @@ function TabApp() {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6">
-            Bikes Rides App
+            Bike Rides App
           </Typography>
         </Toolbar>
       </AppBar>
 
       <AppBar position="static">
         <Tabs value={tabvalue} onChange={handleChange} TabIndicatorProps={{ style: tabAppStyle.tabIndicator }}>
-          <Tab value="rides" label="Rides" style={tabAppStyle.tab} />
-          <Tab value="stations" label="Stations" style={tabAppStyle.tab} />
+          <Tab value="rides" label="Rides" style={tabAppStyle.tab} id="ridesTab"/>
+          <Tab value="stations" label="Stations" style={tabAppStyle.tab} id="stationsTab"/>
         </Tabs>
       </AppBar>
 
