@@ -16,7 +16,7 @@ For importing and manipulating data in the Azure SQL Database, Azure Data Studio
 **Frontend** written with React using external libraries.
 Code (and detailed instructions) stored [here](https://github.com/YuliaKokorieva/bikes-project/tree/master/BikeRidesFront).
 
-###Comments on my pre-assignment
+### Comments on my pre-assignment
 
 Working on the pre-assignment was a fascinating experience for me. It provided an opportunity to further enhance my skills in React and, for the first time in my projects, implement the backend on the cloud using Azure Functions. However, there are two areas that have room for further development:
 
