@@ -16,6 +16,6 @@ hosted in Azure:
  - Azure SQL Database
  - Azure Functions (code and instructions stored [here](https://github.com/YuliaKokorieva/bikes-project/tree/master/AzureFunctions))
 
-###Frontend:  
+###Frontend:   
 written with React using external libraries.
 Code (and detailed instructions) stored [here](https://github.com/YuliaKokorieva/bikes-project/tree/master/BikeRidesFront).
