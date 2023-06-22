@@ -1,4 +1,6 @@
 # Bike Rides project
+Fullstack ptoject for storing and displaying data on city bike rides in Helsinki.  
+
 **Data** concatenated and validated with [Python script](https://github.com/YuliaKokorieva/bikes-project/blob/master/Data/data_validation.py). 
 Validation included:
 1. removing the rides with missing values
