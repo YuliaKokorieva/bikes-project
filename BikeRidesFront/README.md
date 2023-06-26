@@ -70,4 +70,4 @@ In this app, the possibility to run static code analysis is implemented. To perf
 6. now all set, the first analysis can be performed by opening the terminal to the project root folder and running command `node sonarqube-scanner.js` 
 7. when the text "EXECUTION SUCCESS" appears in the logs, you can go to `http://localhost:9000/projects`  and check the results.  
 
-(for sake of simplicity, the default SonarQube container with H2 is used. However, if you want to persistently save analysis reports, it is recommended to use the SonarQube container with a Postgresql database)
+(for sake of simplicity, the default SonarQube container with H2 is used. However, if you want to persistently save analysis reports, it is recommended to use the SonarQube container with a Postgresql database)  
