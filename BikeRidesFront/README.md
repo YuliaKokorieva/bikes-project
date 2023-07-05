@@ -1,6 +1,6 @@
 ## Description
 
-This is frontend for the Bike Rides application. 
+This is Frontend for the Bike Rides application. 
 Available features:
 1. list of all rides for the period 05/2021 - 07/2021 incl. (Rides sliced to 10000 rows)
 2. list of all bike stations
