@@ -3,7 +3,7 @@ name: Azure Web Apps Deployment
 on:
   push:
     branches:
-      - main
+      - master
     paths:
       - 'BikeRidesFront/**'    
 
