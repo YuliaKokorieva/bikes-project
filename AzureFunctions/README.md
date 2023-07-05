@@ -49,7 +49,7 @@ It can be run either locally or from the Azure cloud (Function App).
 1. clone the repo
 2. open AzureFunctions folder
 3. run `npm install`
-4. to run Functions locally, you need credentials for DB connection, that are sored in `local.settings.json` file. It can be sent via email and should be placed in the root directory.
+4. to run Functions locally, you need credentials for DB connection, that are stored in `local.settings.json` file. It can be sent via email and should be placed in the root directory.
 
 #### Starting backend server locally
 1. in project root folder terminal, run `func start` before starting the Frontend.
