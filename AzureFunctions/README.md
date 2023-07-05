@@ -4,7 +4,7 @@ This is backend for the Bike Rides application. It provides the data on bike rid
 The app uses the Azure SQL database.
 It can be run either locally or from the Azure cloud (Function App).
 
-####Available Functions:
+#### Available Functions:
 1.  **GetRides**: returns all rides. Example response: 
 `[{ "ID": 1,
     "Departure_station": "Laajalahden aukio",
