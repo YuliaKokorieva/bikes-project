@@ -1,4 +1,4 @@
-## Description_
+## Description
 
 This is Frontend for the Bike Rides application. 
 Available features:
