@@ -1,0 +1,46 @@
+name: Front Deployment
+
+on: workflow_dispatch
+
+# on:
+#   push:
+#     branches:
+#       - master
+#     paths:
+#       - 'BikeRidesFront/**'    
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+
+    - name: Install dependencies
+      run: |
+        cd BikeRidesFront
+        npm ci
+
+    - name: Build
+      run: |
+        cd BikeRidesFront
+        npm run build
+
+    - name: Archive production build
+      uses: actions/upload-artifact@v2
+      with:
+        name: build
+        path: BikeRidesFront/build
+
+    - name: Deploy to Azure Web App
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: 'bikes-app'    
+        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+        package: BikeRidesFront/build/
