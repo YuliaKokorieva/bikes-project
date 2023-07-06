@@ -1,11 +1,13 @@
-name: Azure Web Apps Deployment
+name: Front Deployment
 
-on:
-  push:
-    branches:
-      - master
-    paths:
-      - 'BikeRidesFront/**'    
+on: workflow_dispatch
+
+# on:
+#   push:
+#     branches:
+#       - master
+#     paths:
+#       - 'BikeRidesFront/**'    
 
 jobs:
   build-and-deploy:
