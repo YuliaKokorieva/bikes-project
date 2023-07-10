@@ -1,8 +1,8 @@
 # Bike Rides project
-Fullstack ptoject for storing and displaying data on city bike rides in Helsinki.  
+Fullstack / Cloud project for storing and displaying data on city bike rides in Helsinki.  
 
 ### Data:
-concatenated and validated with [Python script](https://github.com/YuliaKokorieva/bikes-project/blob/master/Data/data_validation.py). 
+Concatenated and validated with [Python script](https://github.com/YuliaKokorieva/bikes-project/blob/master/Data/data_validation.py). 
 Validation included:
 1. removing the rides with missing values
 2. removing the rides that lasted less than 10 secs and less then 10 m
@@ -11,11 +11,12 @@ Validation included:
 For importing and manipulating data in the Azure SQL Database, Azure Data Studio tool has been used.
 
 ### Backend:  
-hosted in Azure:
+Hosted in Azure:
 
  - Azure SQL Database
  - Azure Functions (code and instructions stored [here](https://github.com/YuliaKokorieva/bikes-project/tree/master/AzureFunctions))
 
 ### Frontend:   
-written with React using external libraries.
+Written with React using external libraries.  
+Deployed to Azure Web Apps via Github Actions CI/CD pipeline.
 Code (and detailed instructions) stored [here](https://github.com/YuliaKokorieva/bikes-project/tree/master/BikeRidesFront).

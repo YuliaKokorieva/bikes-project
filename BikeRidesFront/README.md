@@ -71,3 +71,8 @@ In this app, the possibility to run static code analysis is implemented. To perf
 7. when the text "EXECUTION SUCCESS" appears in the logs, you can go to `http://localhost:9000/projects`  and check the results.  
 
 (for sake of simplicity, the default SonarQube container with H2 is used. However, if you want to persistently save analysis reports, it is recommended to use the SonarQube container with a Postgresql database)  
+
+## Azure Web Apps hosting  
+The app is being continiously deployed to Azure Web Apps via Github Actions ([pipeline file](https://github.com/YuliaKokorieva/bikes-project/blob/master/.github/workflows/master_bikes-app_front.yml)).  
+URL of the app: [Bikes App](https://bikes-app.azurewebsites.net/).  
+
