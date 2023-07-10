@@ -18,5 +18,5 @@ Hosted in Azure:
 
 ### Frontend:   
 Written with React using external libraries.  
-Deployed to Azure Web Apps via Github Actions CI/CD pipeline.
+Deployed to Azure Web Apps via Github Actions CI/CD pipeline.  
 Code (and detailed instructions) stored [here](https://github.com/YuliaKokorieva/bikes-project/tree/master/BikeRidesFront).
