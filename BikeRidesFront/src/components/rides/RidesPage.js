@@ -25,10 +25,10 @@ function RidesPage() {
       field: 'Return_station', sortable: true, filter: true, headerName: 'Return station',
     },
     {
-      field: 'Distance', sortable: true, filter: false, headerName: 'Distance, km.',
+      field: 'Covered_distance_m', sortable: true, filter: false, headerName: 'Distance, km.',
     },
     {
-      field: 'Duration', sortable: true, filter: false, headerName: 'Duration, min.',
+      field: 'Duration_sec', sortable: true, filter: false, headerName: 'Duration, min.',
     },
   ]
 
