@@ -75,4 +75,4 @@ In this app, the possibility to run static code analysis is implemented. To perf
 ## Azure Web Apps hosting  
 The app is being continiously deployed to Azure Web Apps via Github Actions ([pipeline file](https://github.com/YuliaKokorieva/bikes-project/blob/master/.github/workflows/master_bikes-app_front.yml)).  
 URL of the app: [Bikes App](https://bikes-app.azurewebsites.net/).  
-
+test
