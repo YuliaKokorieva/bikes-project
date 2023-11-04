@@ -1,6 +1,6 @@
 name: Front Deployment
 
-on: workflow_dispatch
+# on: workflow_dispatch
 env:
   REACT_APP_BASE_URL: ${{ secrets.REACT_APP_BASE_URL }}
   REACT_APP_GOOGLE_API_KEY : ${{secrets.REACT_APP_GOOGLE_API_KEY}}
