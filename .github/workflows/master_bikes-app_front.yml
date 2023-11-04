@@ -5,13 +5,13 @@ env:
   REACT_APP_BASE_URL: ${{ secrets.REACT_APP_BASE_URL }}
   REACT_APP_GOOGLE_API_KEY : ${{secrets.REACT_APP_GOOGLE_API_KEY}}
 
-on: workflow_dispatch
-# on:
-#   push:
-#     branches:
-#       - master
-#     paths:
-#       - 'BikeRidesFront/**'    
+# on: workflow_dispatch
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'BikeRidesFront/**'    
 
 jobs:
   build-and-deploy:
